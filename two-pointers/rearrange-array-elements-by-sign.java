@@ -1,0 +1,23 @@
+class Solution {
+    public int[] rearrangeArray(int[] nums) {
+        int n=nums.length;
+        int[] ans=new int[n];
+        int pos=0,neg=1;
+
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]>0)
+            {
+                ans[pos]=nums[i]; //+ive ko even index par rakhenge
+                pos+=2;
+            }
+            else
+            {
+                ans[neg]=nums[i]; //-ive ko odd index par rakhenge
+                neg+=2;
+            }
+        }
+        return ans;
+
+    }
+}
